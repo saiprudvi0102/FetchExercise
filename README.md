@@ -43,5 +43,5 @@ This Android application fulfills the exact requirements specified in the Fetch 
 
 ### Installation
 ```bash
-git clone https://github.com/yourusername/fetch-rewards-exercise.git
+git clone https://github.com/saiprudvi0102/fetch-rewards-exercise.git
 cd fetch-rewards-exercise
