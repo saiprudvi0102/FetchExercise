@@ -1,48 +1,47 @@
-# Fetch Rewards Coding Exercise - Android
+# Fetch Rewards Mobile Engineering Exercise
 
-## 📱 App Overview
+![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![Retrofit](https://img.shields.io/badge/Retrofit-2.9.0-blue.svg?style=for-the-badge)
 
-This Android application retrieves and displays item data from the Fetch Rewards API, implementing the following requirements:
+## 📋 Project Overview
 
-- Fetches data from `https://fetch-hiring.s3.amazonaws.com/hiring.json`
-- Groups items by their `listId`
-- Sorts items first by `listId` then by `name`
-- Filters out items with blank or null names
-- Displays results in a clean, scrollable list
+This Android application fulfills the exact requirements specified in the Fetch Rewards Mobile Engineering assessment:
 
-## 🛠 Technical Implementation
+- **Data Source**: Fetches JSON data from `https://hiring.fetch.com/hiring.json`
+- **Display Requirements**:
+  - Groups items by `listId`
+  - Sorts by `listId` (ascending) then by `name` (numeric-aware)
+  - Filters out items with blank/null names
+- **Technical Requirements**:
+  - Native Android app (Java)
+  - Compatible with latest stable Android tools
+  - Supports current Android OS versions
 
-### Architecture
-- **MVVM (Model-View-ViewModel)** pattern
-- **Repository pattern** for data handling
-- **LiveData** for reactive UI updates
-- **Retrofit** for network operations
-- **RecyclerView** for efficient list display
+## 🏗 Implementation Details
+
+### Data Processing Pipeline
+1. **Fetch** → Retrieve JSON from Fetch's hiring endpoint
+2. **Filter** → Remove items with blank/null names
+3. **Sort** →
+4. 4. **Display** → Clean RecyclerView presentation
 
 ### Key Components
 | Component | Responsibility |
 |-----------|---------------|
-| `ItemRepository` | Handles data fetching, filtering, and sorting |
-| `ItemViewModel` | Manages UI-related data |
-| `ItemAdapter` | Binds data to RecyclerView |
-| `MainActivity` | Sets up UI and observes data changes |
-
-### Sorting Logic
-1. **Primary Sort**: By `listId` (ascending)
-2. **Secondary Sort**: By `name` with special handling:
-   - Extracts numbers from names (e.g., "Item 123" → 123)
-   - Numeric names sorted numerically (2 comes before 10)
-   - Non-numeric names sorted alphabetically
-   - Numeric names appear before non-numeric names
+| `ApiClient` | Configures Retrofit with official endpoint |
+| `ItemRepository` | Handles data fetching and processing |
+| `ItemAdapter` | Efficient RecyclerView implementation |
+| `MainActivity` | Sets up UI and observes LiveData |
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Android Studio (latest stable version)
-- Android SDK (API level 21+)
-- Java 8+
+- Android Studio Flamingo (2022.2.1) or later
+- Android SDK 33+
+- Java 17
 
 ### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/fetch-rewards-android.git
+```bash
+git clone https://github.com/yourusername/fetch-rewards-exercise.git
+cd fetch-rewards-exercise
