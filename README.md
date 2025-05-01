@@ -24,7 +24,7 @@ This Android application fulfills the exact requirements specified in the Fetch 
 1. **Fetch** → Retrieve JSON from Fetch's hiring endpoint
 2. **Filter** → Remove items with blank/null names
 3. **Sort** →
-4. 4. **Display** → Clean RecyclerView presentation
+4. **Display** → Clean RecyclerView presentation
 
 ### Key Components
 | Component | Responsibility |
